@@ -1,0 +1,117 @@
+const { Schema, model } = require("mongoose");
+
+const KetquaSchema = Schema({
+    id: {
+        type: String,
+    },
+    tieude: {
+        type: String,
+    },
+    ngayduong: {
+        type: String,
+    },
+    ngayketqua: {
+        type: Date,
+    },
+    ngayam: {
+        type: String,
+    },
+    kytu: {
+        type: String,
+    },
+    db: {
+        type: String,
+    },
+    g1: {
+        type: String,
+    },
+    g2_1: {
+        type: String,
+    },        
+    g2_2: {
+        type: String,
+    },        
+    g3_1: {
+        type: String,
+    },        
+    g3_2: {
+        type: String,
+    },        
+    g3_3: {
+        type: String,
+    },        
+    g3_4: {
+        type: String,
+    },        
+    g3_5: {
+        type: String,
+    },        
+    g3_6: {
+        type: String,
+    },        
+    g4_1: {
+        type: String,
+    },        
+    g4_2: {
+        type: String,
+    },        
+    g4_3: {
+        type: String,
+    },        
+    g4_4: {
+        type: String,
+    },        
+    g5_1: {
+        type: String,
+    },        
+    g5_2: {
+        type: String,
+    },        
+    g5_3: {
+        type: String,
+    },        
+    g5_4: {
+        type: String,
+    },        
+    g5_5: {
+        type: String,
+    },        
+    g5_6: {
+        type: String,
+    },        
+    g6_1: {
+        type: String,
+    },        
+    g6_2: {
+        type: String,
+    },        
+    g6_3: {
+        type: String,
+    }, 
+    g7_1: {
+        type: String,
+    },        
+    g7_2: {
+        type: String,
+    },        
+    g7_3: {
+        type: String,
+    },
+    
+    g7_4: {
+        type: String,
+    },                       
+}
+,{
+    timestamps:true
+});
+// extract what we need to show
+KetquaSchema.method('toJSON',function(){
+    const { __v,_id, ...object} = this.toObject();
+    object.uid = _id;
+    //bject.ngayketqua=new Date(this.ngayduong);
+    return object;
+});
+
+
+module.exports = model('Ketqua',KetquaSchema);
