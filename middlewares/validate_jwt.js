@@ -13,7 +13,10 @@ const validateJWT = (req,res,next) => {
 
     try {
         // Try to verify token, if not go to catch
-        const { uid } = jwt.verify(token,process.env.JWTKEY);
+        const { uid } = jwt.verify(token,
+            //process.env.JWTKEY
+            "fnns23e@fkndjs783bd8jwjf0hg?ef6jhnsp"
+            );
         req.uid = uid;
 
         next();

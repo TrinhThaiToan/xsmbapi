@@ -9,7 +9,10 @@ const generateToken = (uid) => {
         const payload = { uid };
 
         //3.- a secret
-        jwt.sign(payload, process.env.JWTKEY,{
+        jwt.sign(payload, 
+            //process.env.JWTKEY
+            "fnns23e@fkndjs783bd8jwjf0hg?ef6jhnsp"
+            ,{
             expiresIn:'12h',
         }, (error, token) => {
             if(error){
@@ -26,7 +29,10 @@ const generateToken = (uid) => {
 const verifyJWT = (token = '') =>{
     try {
         // Try to verify the Token, if not go to Catch
-        const { uid } = jwt.verify(token,process.env.JWTKEY);
+        const { uid } = jwt.verify(
+            //token,process.env.JWTKEY
+            "fnns23e@fkndjs783bd8jwjf0hg?ef6jhnsp"
+            );
         //console.log("token = " + token + " this");
         return [true,uid];
     } catch (error) {
